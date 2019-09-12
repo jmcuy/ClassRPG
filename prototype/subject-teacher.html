@@ -21,12 +21,28 @@
     <button><a href="add-guild-activity.html">Add Guild Activity</a></button>
     <button><a href="see-enrolled-participants.html">See Enrolled Participants</a></button>
     <h4>Quizzes</h4>
-    <button><a href="quiz-1-teacher.html">Quiz #1 - 8/21/19</a></button>
+    <button id="quiz1-btn">Quiz #1 - 8/21/19</button>
+    <div class="quiz-panel" hidden id="quiz1">
+        <button><a href="subject-see-participants.html">See Participants</a></button> <br><br>
+
+        <!-- every information here is located at the database so if we change it, it must reflect the database -->
+        <button>Edit</button> Quiz #1 - 8/21/19 <br>
+        <button>Edit </button> iva<br><br>
+        <button>Edit </button> div <input type="text" disabled> 5 XP <br>
+        <button>Edit </button> fraction <input type="text" disabled> 5 XP <br>
+        <button>Edit </button> currency<input type="text" disabled> 5 XP <br> <br>
+        Total XP: 15 XP <br><br>
+
+        <button id="close-btn">Close</button>
+    </div>
     
     <h4>Lab Activities</h4>
     <button>Lab Activity #1 - 8/22/19</button>
     <h4>Exams</h4>
     <button>Long Exam #1 - 7/15/19</button>
+
+    <script src="js/index.js"></script>
+    <script  src="js/subject.js"></script>
 </body>
 
 </html>
