@@ -19,9 +19,9 @@ function close(id){
    
 }
 
-// quiz_ref.once('value', function(snapshot){
-//     snapshot.forEach(function(childsnapshot){
-//         console.log(childsnapshot.key);  
+quiz_ref.once('value', function(snapshot){
+    snapshot.forEach(function(childsnapshot){
+        console.log(childsnapshot.key);  
         
-//     });
-//  });
+    });
+ });
