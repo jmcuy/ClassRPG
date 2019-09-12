@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ClassRPG | Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button><a href="home-student.html">Home</a></button>
+    <button><a href="login-main.html">Sign Out</a></button>
+
+    <h1>Home</h1>
+
+    <h2>User</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td> 
+                <td>Email</td> 
+                <td>SAIS ID</td> 
+                <td>Guild</td>
+                <td>Legion</td>  
+            </tr>
+        <tbody id="table_body">
+    </tbody>
+        </thead>
+    </table>
+    <!--
+    Janelle Elaiza F. Unabia <br>
+    123456789 <br>
+    College of Science - Computer Science <br>
+    Student
+-->
+    <h2>My Guild Missions</h2>
+    <button><a href="subject.html">CMSC 11</a></button>
+
+    <h2>Milestones</h2>
+<script src="https://www.gstatic.com/firebasejs/6.5.0/firebase.js"></script>
+
+
+<script>
+var config = {
+  apiKey: "AIzaSyCRNtGaHVfkfU6JwZj9BBSYfUpSXRJ0lIk",
+  authDomain: "classrpg-2ac09.firebaseapp.com",
+  databaseURL: "https://classrpg-2ac09.firebaseio.com",
+  projectId: "classrpg-2ac09",
+  storageBucket: "",
+  messagingSenderId: "265529658530",
+  appId: "1:265529658530:web:213f9c11a2a57002"
+};
+firebase.initializeApp(config);
+</script>
+
+
+<script src="index.js"></script>
+</body>
+
+</html>
