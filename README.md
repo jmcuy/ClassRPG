@@ -5,5 +5,5 @@ To check for individual progress, please refer to the different branches, since 
 (Each member has a branch)
 
 Update: (12/09/19)
-Firebase config object is located at index.js
+Firebase config object is located at index.js <br>
 -add index.js to every html needing firebase connection
