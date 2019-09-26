@@ -1,6 +1,6 @@
 var nem = document.getElementById("nem");
 var date = document.getElementById("date");
-//var type = document.getElementById(); 
+var type = document.getElementById("type"); 
 
 var sub_btn = document.getElementById("sub_btn");
 
@@ -9,12 +9,16 @@ function submit(){
 
     var date_txt = date.value;
     var name_txt = nem.value;
+    var choice = type.value;
     
     fb.push();
      var x = firebase.database().ref().child("guild-activity");
      
      x.child("date").set(date_txt);
      x.child("nem").set(name_txt);
+     x.child("type").set(choice);
+
+     //window.location.href="subject-teacher.html";
 
 //    x.on('value', snap => console.log(snap.val()));
 
