@@ -7,3 +7,7 @@ To check for individual progress, please refer to the different branches, since 
 <h1>Update: (12/09/19)</h1>
 Firebase config object is located at index.js <br>
 -add index.js to every html needing firebase connection
+
+<h1>Update: (07/10/19)</h1>
+Added Mocha for unit testing<br>
+-used static values only
