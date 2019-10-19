@@ -17,38 +17,23 @@
 
     <h1>Greetings, "name" !</h1>
 
-    <button onclick="addGuildMission()">Add Guild Mission</button>
-    <p id="addGuildMission">
-        Name: <input type="text">
-        <button  onclick="submit()">Submit</button>
-
+    <button onclick="expand('add-subject')">Add Guild Mission</button>
+    <p id="add-subject">
+        Name: <input type="text" id="subject">
+        <button  onclick="submit('add-subject')">Submit</button>
+    
     </p>
     <h2>My Guild Missions</h2>
-    <button><a href="guild-mission-teacher.html">Subject</a></button>
+    <!-- <button><a href="guild-mission-teacher.html" onclick="dispSubjects">Subject</a></button> -->
+    <button onclick="">Subject</button>
     <button>Subject 2</button>
 
 
-    <script>
-        document.getElementById("addGuildMission").style.display = "none";
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
 
-        function addGuildMission() {
-            var x = document.getElementById("addGuildMission");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-
-        document.getElementById("view-mission").style.display = "none";
-
-
-    function submit(){
-        window.alert("Guild Mission added successfully! \nAccess code is: ");
-    }
-
-    </script>
-
+    <script src="js/firebase-connect.js"></script>
+    <script src="js/guild.js"></script>
 </body>
 
 </html>

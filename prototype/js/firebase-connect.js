@@ -14,3 +14,16 @@ firebase.initializeApp(firebaseConfig);
 let db = firebase.database();
 let quiz_ref = db.ref("Quizzes");
 let guild_ref = db.ref("Guilds");
+
+
+document.getElementById("add-subject").style.display = "none";
+// document.getElementById("view-mission").style.display = "none";
+function expand(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+

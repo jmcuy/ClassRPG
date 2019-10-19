@@ -11,3 +11,8 @@ Firebase config object is located at index.js <br>
 <h1>Update: (07/10/19)</h1>
 Added Mocha for unit testing<br>
 -used static values only
+
+<h1>Update: (19/10/19)</h1>
+-Modified home-teacher.html<br>
+-Added js to home-teacher => addSubject()<br>
+-added static unit testing using Mocha
