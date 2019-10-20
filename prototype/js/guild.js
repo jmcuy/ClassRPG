@@ -1,33 +1,7 @@
 
-//returns database ref so that we wont need to die because of the asynchronosity of Firebase
-let promise = new Promise((resolve,reject)=>{
-    guild_ref.once('value', function(snapshot){
-        var temp = [];
-        snapshot.forEach(function(childsnapshot){
-            temp.push({id:childsnapshot.key, name: childsnapshot.child('course').val()})
-               
-        });
-        resolve(temp);    //returns the array of values
-    });
-
-});
-
-
-exports.validation = function(){
-    for(let i = 0; i < guild_ref.keys.length;i++){
-        if(guild_ref.keys[i] == key){
-            return true
-        }
-    }
-    return false
-}
-
-
-async function addSubject(){ //ONLY ADD SUBJECT THAT DOESNT EXIST YET
+function addSubject(){ //ONLY ADD SUBJECT THAT DOESNT EXIST YET
     let name = document.getElementById("subject").value //get input
     let new_name = name.replace(" ","").toLowerCase();
-    
-    let temp = await promise; //equivalent to promise.then((result)=> return result)
     if(typeof temp !== "undefined"){ //validation that we wont get an undefined database
         for(let i =0; i < temp.length;i++){
             console.log(temp[i],new_name)
@@ -40,6 +14,7 @@ async function addSubject(){ //ONLY ADD SUBJECT THAT DOESNT EXIST YET
             course: name.toUpperCase()
         });
         alert("ADDED")
+        location.reload();
         return true; 
         
     }
@@ -50,20 +25,56 @@ async function addSubject(){ //ONLY ADD SUBJECT THAT DOESNT EXIST YET
 }
 
 
-async function submit(id){
-    if(id == 'guild_key'){
-        let guild_key = document.getElementById("guild_key").value
-        // let key = validation(guild_key);    
-    } else if(id == 'add-subject'){
+function dispSubject(){
+    let pcontainer = document.getElementsByClassName("sub-container")[0]
+    pcontainer.innerHTML = "";
+    if(typeof temp !== "undefined" ){
+        for(let i = 0; i < temp.length;i++){
+            let sub_child = document.createElement("button");
+            let sub_name = temp[i].name;
+
+            sub_child.addEventListener("click", function(){
+                alert("redirecting")
+                window.location.href = "./guild-mission-teacher.html" + "?/" + sub_name.replace(" ","%");
+            });
+            
+            sub_child.innerHTML = "<h4>"+ sub_name +" </h4>";
+            pcontainer.appendChild(sub_child);
+        }
+    } else {
+        console.log("unde")
+    }
+    
+   
+}
+
+//forms stuff
+// document.getElementById("add-subject").style.display = "none";
+
+// document.getElementById("view-mission").style.display = "none";
+function expand(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function submit(id){
+    if(id == 'add-subject'){
         addSubject();
     }
    
 }
 
+//=============================TESTING AREA=====================================
+//==============================================================================
+//==============================================================================
 
-exports.addSubject_test = async function(promise,name){ //TEST FUNCTION FOR ADDSUBJET()
+
+exports.addSubject_test = function(temp,name){ //TEST FUNCTION FOR ADDSUBJET()
     let new_name = name.replace(" ","").toLowerCase();
-    let temp = await promise; //TEMP SUPPOSE TO CONTAIN DATABASE ELEMENTS UNDER 'GUILDS'
     if(typeof temp !== "undefined"){ //validation that we wont get an undefined database
         for(let i =0; i < temp.length;i++){
             console.log(temp[i],new_name)
@@ -77,7 +88,7 @@ exports.addSubject_test = async function(promise,name){ //TEST FUNCTION FOR ADDS
         
     }
     else {
-        setTimeout(addSubject(),1000); //wait until we get the value
+        setTimeout(addSubject_test(temp,name),1000); //wait until we get the value
     }
     
 }
