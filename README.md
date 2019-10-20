@@ -16,3 +16,12 @@ Added Mocha for unit testing<br>
 -Modified home-teacher.html<br>
 -Added js to home-teacher => addSubject()<br>
 -added static unit testing using Mocha
+
+
+<h1>Update: (20/10/19)</h1>
+-Modified home-teacher.html<br>
+-Modified home-student.html<br>
+-Modified profile.html<br>
+-Added js to home-teacher + home-student + profile<br>
+-Modified firebase-connect.js
+-added static unit testing using Mocha
